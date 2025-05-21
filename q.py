@@ -23,6 +23,21 @@ class TestWin(QWidget):
        self.tw = TestWin()
        self.hide()
 
+ def timer_test(self):
+       global time
+       time = QTime(0, 0, 15)
+       self.timer = QTimer()
+       self.timer.timeout.connect(self.timer1Event)
+       self.timer.start(1000)
+
+
+   def timer_sits(self):
+       global time
+       time = QTime(0, 0, 30)
+       self.timer = QTimer()
+       self.timer.timeout.connect(self.timer2Event)
+       #одно приседание в 1.5 секунды
+       self.timer.start(1500)
 
     def connects(self):
        self.btn_next.clicked.connect(self.next_click)
