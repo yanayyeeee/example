@@ -9,7 +9,13 @@ from PyQt5.QtWidgets import (
 from inst import *
 from final_win import *
 
-
+class Experiment():
+   def __init__(self, age, test1, test2, test3):
+       self.age = age
+       self.t1 = test1
+       self.t2 = test2
+       self.t3 = test3
+          
 class TestWin(QWidget):
     def __init__(self):
        ''' окно, в котором проводится опрос '''
@@ -20,6 +26,7 @@ class TestWin(QWidget):
        self.show()
   
     def next_click(self):
+       self.exp = Experiment(int(self.line_age.text()), self.line_test1.text(), self.line_test2.text(), self.line_test2.text())
        self.tw = TestWin()
        self.hide()
 
